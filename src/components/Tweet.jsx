@@ -9,7 +9,7 @@ function Tweet({ tweet }) {
                 <span className="tweet-date">{tweet.date}</span>
             </div>
 
-            <p className="tweet-content">bla {tweet.content}</p>
+            <p className="tweet-content">{tweet.content}</p>
         </div>
     );
 }
