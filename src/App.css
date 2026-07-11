@@ -5,8 +5,8 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f5f8fa;
-  color: #0f1419;
+  background-color: #15202b;
+  color: #ffffff;
 }
 
 #root {
@@ -20,28 +20,31 @@ body {
   padding: 0 16px;
 }
 
+/* Create Tweet */
+
 .create-tweet-box {
   width: 100%;
-  background-color: white;
-  border: 1px solid #d9e1e8;
-  border-radius: 16px;
+  border: 2px solid #cfd9de;
+  border-radius: 6px;
   padding: 16px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  background-color: #15202b;
+  margin-bottom: 24px;
 }
 
 .create-tweet-box textarea {
   width: 100%;
-  min-height: 120px;
+  min-height: 110px;
   border: none;
-  resize: none;
   outline: none;
-  font-size: 17px;
+  resize: none;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 16px;
   font-family: inherit;
-  line-height: 1.5;
 }
 
 .create-tweet-box textarea::placeholder {
-  color: #657786;
+  color: #b0b8bf;
 }
 
 .tweet-actions {
@@ -49,28 +52,25 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
-  padding-top: 12px;
-  border-top: 1px solid #edf1f4;
 }
 
 .tweet-actions span {
+  color: #8899a6;
   font-size: 14px;
-  color: #657786;
 }
 
 button {
   border: none;
-  border-radius: 999px;
-  padding: 9px 22px;
-  background-color: #1da1f2;
+  border-radius: 4px;
+  padding: 9px 18px;
+  background-color: #1d9bf0;
   color: white;
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #1688d3;
+  background-color: #1a8cd8;
 }
 
 button:disabled {
@@ -79,39 +79,51 @@ button:disabled {
 }
 
 .error-message {
-  color: #e0245e;
+  color: #ff6b6b;
   font-size: 14px;
   margin: 8px 0 0;
 }
 
+/* Tweet List */
+
 .tweet-list {
-  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
+/* Single Tweet */
+
 .tweet {
-  background-color: white;
-  border: 1px solid #d9e1e8;
-  border-radius: 14px;
-  padding: 14px 16px;
-  margin-bottom: 12px;
+  width: 100%;
+  background-color: #343a40;
+  border-radius: 6px;
+  padding: 16px 20px;
+  color: #e6ecf0;
 }
 
 .tweet-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
-  font-size: 14px;
+  align-items: center;
+  margin-bottom: 14px;
 }
 
 .tweet-username {
+  color: #8b98a5;
+  font-size: 14px;
   font-weight: bold;
 }
 
 .tweet-date {
-  color: #657786;
+  color: #8b98a5;
+  font-size: 14px;
 }
 
 .tweet-content {
-  font-size: 16px;
-  line-height: 1.5;
+  margin: 0;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.4;
 }
