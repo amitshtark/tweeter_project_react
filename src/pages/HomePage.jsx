@@ -1,6 +1,6 @@
 import { useState } from "react";
-import  CreateTweet from "..components/CreateTweet.jsx"
-import  TweetList from "..components/TweetList.jsx"
+import  CreateTweet from "../components/CreateTweet.jsx"
+import  TweetList from "../components/TweetList.jsx"
 
 
 function HomePage() {
@@ -23,7 +23,7 @@ function HomePage() {
     
     
     return (
-    <div>
+    <div className="home-page">
       <CreateTweet addTweet = {addTweet}></CreateTweet>
       <TweetList tweets = {tweets}></TweetList>
     </div>
