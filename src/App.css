@@ -127,3 +127,13 @@ button:disabled {
   font-size: 15px;
   line-height: 1.4;
 }
+
+.server-response {
+  background-color: #111;
+  color: #00ff88;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  white-space: pre-wrap;
+  margin-bottom: 20px;
+}
