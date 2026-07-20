@@ -11,10 +11,6 @@ function HomePage() {
     const [error, setError] = useState("");
 
 
-    const USERNAME = "Amit"
-
-
-
     useEffect(() => {
         async function loadTweets() {
             try{
@@ -39,7 +35,7 @@ function HomePage() {
         const newTweet = {
             content: content,
             date: new Date().toISOString(),
-            userName: USERNAME,
+            userName: localStorage.getItem("username") || "Amit",
         };
 
         try{
