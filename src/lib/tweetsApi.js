@@ -17,6 +17,6 @@ export async function createTweet(tweet) {
         ...tweet,
         id: Date.now(),
       });
-    }, 500);
+    }, 2000);
   });
 }

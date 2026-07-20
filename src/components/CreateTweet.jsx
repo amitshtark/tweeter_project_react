@@ -8,7 +8,7 @@ function CreateTweet(props) {
     const isEmpty = content.trim() === "";
 
     function submit(){
-        if (isTooLong || isEmpty) return;
+        if (isTooLong || isEmpty || props.isAdding) return;
 
         props.addTweet(content.trim());
         setContent("");
@@ -30,8 +30,8 @@ function CreateTweet(props) {
 
             <div className="tweet-actions">
             <span>{content.length}/140</span>
-            <button disabled={isTooLong || isEmpty} onClick={submit}>
-                Create
+            <button disabled={isTooLong || isEmpty || props.isAdding} onClick={submit}>
+                {props.isAdding? "Posting..." : "Create"}
             </button>
             </div>
         </div>
