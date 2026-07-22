@@ -1,11 +1,12 @@
 import  Tweet from "./Tweet.jsx"
+import { useTweets } from "../context/TweetsContext.jsx";
 
 
-
-function TweetList(props) {
+function TweetList() {
+  const { tweets } = useTweets();
   return (
     <div className="tweet-list">
-        {props.tweets.map((tweet) => {
+        {tweets.map((tweet) => {
           return <Tweet key={tweet.id} tweet={tweet}/>
         })}
     </div>

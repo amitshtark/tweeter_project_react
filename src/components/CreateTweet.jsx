@@ -1,16 +1,17 @@
 import { useState } from "react";
+import { useTweets } from "../context/TweetsContext.jsx"
 
-
-function CreateTweet(props) {
+function CreateTweet() {
 
     const [content, setContent] = useState('');
     const isTooLong = content.length > 140;
     const isEmpty = content.trim() === "";
+    const {addTweet, isAdding} = useTweets();
 
     function submit(){
-        if (isTooLong || isEmpty || props.isAdding) return;
+        if (isTooLong || isEmpty || isAdding) return;
 
-        props.addTweet(content.trim());
+        addTweet(content.trim());
         setContent("");
     }
 
@@ -30,8 +31,8 @@ function CreateTweet(props) {
 
             <div className="tweet-actions">
             <span>{content.length}/140</span>
-            <button disabled={isTooLong || isEmpty || props.isAdding} onClick={submit}>
-                {props.isAdding? "Posting..." : "Create"}
+            <button disabled={isTooLong || isEmpty || isAdding} onClick={submit}>
+                {isAdding? "Posting..." : "Create"}
             </button>
             </div>
         </div>
