@@ -1,5 +1,5 @@
 export async function getTweets() {
-  const response = await fetch("/dummyData.json");
+  const response = await fetch(`${import.meta.env.BASE_URL}dummyData.json`);
   const data = await response.json();
 
   return data
