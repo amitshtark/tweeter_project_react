@@ -1,22 +1,26 @@
-export async function getTweets() {
-  const response = await fetch(`${import.meta.env.BASE_URL}dummyData.json`);
-  const data = await response.json();
+import { supabase } from "./supabaseClient.js"
 
-  return data
-    .map((tweet, index) => ({
-      ...tweet,
-      id: index + 1,
-    }))
-    .sort((a, b) => new Date(b.date) - new Date(a.date));
+export async function getTweets() {
+  const { data, error} = await supabase
+  .from("tweets")
+  .select("*")
+  .order("date", {ascending: false});
+  
+  if(error)
+    throw error;
+
+  return data;
 }
 
 export async function createTweet(tweet) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        ...tweet,
-        id: Date.now(),
-      });
-    }, 2000);
-  });
+  const { data, error} = await supabase
+  .from("tweets")
+  .insert(tweet)
+  .select()
+  .single();
+
+  if(error)
+    throw error;
+
+  return data;
 }
