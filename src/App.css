@@ -9,25 +9,112 @@ body {
   color: #ffffff;
 }
 
-#root {
-  min-height: 100vh;
+button,
+input,
+textarea {
+  font-family: inherit;
 }
 
-.home-page {
+/* Navbar */
+
+.navbar {
+  width: 100%;
+  height: 64px;
+  background-color: #0f1720;
+  border-bottom: 1px solid #2f3b46;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  gap: 24px;
+}
+
+.navbar a {
+  color: #d9e1e8;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #1d9bf0;
+}
+
+.navbar button {
+  margin-left: auto;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 18px;
+  background-color: transparent;
+  color: #d9e1e8;
+  border: 1px solid #536471;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  background-color: #22303c;
+}
+
+/* Pages */
+
+.home-page,
+.profile-page,
+.login-page {
   width: 100%;
   max-width: 560px;
   margin: 40px auto;
   padding: 0 16px;
 }
 
+.profile-page,
+.login-page {
+  background-color: #192734;
+  border: 1px solid #38444d;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.profile-page h2,
+.login-page h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Forms */
+
+.profile-page input,
+.login-page input {
+  width: 100%;
+  height: 44px;
+  margin-bottom: 14px;
+  padding: 0 12px;
+  border: 1px solid #38444d;
+  border-radius: 8px;
+  background-color: #253341;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+}
+
+.profile-page input::placeholder,
+.login-page input::placeholder {
+  color: #8899a6;
+}
+
+.profile-page input:focus,
+.login-page input:focus {
+  border-color: #1d9bf0;
+}
+
 /* Create Tweet */
 
 .create-tweet-box {
   width: 100%;
-  border: 2px solid #cfd9de;
-  border-radius: 6px;
+  border: 1px solid #38444d;
+  border-radius: 12px;
   padding: 16px;
-  background-color: #15202b;
+  background-color: #192734;
   margin-bottom: 24px;
 }
 
@@ -40,11 +127,11 @@ body {
   background-color: transparent;
   color: #ffffff;
   font-size: 16px;
-  font-family: inherit;
+  line-height: 1.5;
 }
 
 .create-tweet-box textarea::placeholder {
-  color: #b0b8bf;
+  color: #8899a6;
 }
 
 .tweet-actions {
@@ -52,6 +139,8 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid #38444d;
 }
 
 .tweet-actions span {
@@ -59,13 +148,16 @@ body {
   font-size: 14px;
 }
 
+/* General Buttons */
+
 button {
   border: none;
-  border-radius: 4px;
-  padding: 9px 18px;
+  border-radius: 999px;
+  padding: 9px 20px;
   background-color: #1d9bf0;
   color: white;
   font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
 }
 
@@ -78,10 +170,12 @@ button:disabled {
   cursor: not-allowed;
 }
 
+/* Errors / Loading */
+
 .error-message {
   color: #ff6b6b;
   font-size: 14px;
-  margin: 8px 0 0;
+  margin: 10px 0;
 }
 
 /* Tweet List */
@@ -97,8 +191,9 @@ button:disabled {
 
 .tweet {
   width: 100%;
-  background-color: #343a40;
-  border-radius: 6px;
+  background-color: #253341;
+  border: 1px solid #38444d;
+  border-radius: 12px;
   padding: 16px 20px;
   color: #e6ecf0;
 }
@@ -111,13 +206,13 @@ button:disabled {
 }
 
 .tweet-username {
-  color: #8b98a5;
+  color: #ffffff;
   font-size: 14px;
   font-weight: bold;
 }
 
 .tweet-date {
-  color: #8b98a5;
+  color: #8899a6;
   font-size: 14px;
 }
 
@@ -125,15 +220,5 @@ button:disabled {
   margin: 0;
   color: #ffffff;
   font-size: 15px;
-  line-height: 1.4;
-}
-
-.server-response {
-  background-color: #111;
-  color: #00ff88;
-  padding: 12px;
-  border-radius: 6px;
-  font-size: 13px;
-  white-space: pre-wrap;
-  margin-bottom: 20px;
+  line-height: 1.5;
 }
